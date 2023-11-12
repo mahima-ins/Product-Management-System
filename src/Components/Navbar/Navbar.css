@@ -1,0 +1,33 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+    
+
+/* Style the navigation bar */
+.navbar {
+    background-color: #333; /* Background color */
+    overflow: hidden;
+    position: relative;
+}
+
+.navbar a {
+    float: left;
+    display: block; 
+    color: white;
+    text-align: center;
+    padding: 14px 16px; /* Spacing around the links */
+    text-decoration: none;
+}
+
+/* Style the navigation links when the screen size is small */
+@media screen and (max-width: 600px) {
+    .navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
