@@ -18,6 +18,7 @@ console.log(products)
   return (
     <>
     <Navbar/>
+    <div className='card-container'>
      {
       products.map((obj1)=>{
         return(
@@ -26,12 +27,14 @@ console.log(products)
   <h2 className="product-name">{obj1.ProductName}</h2>
   <p className="product-description">{obj1.ProductDescription}.</p>
 </div>
-        )
+       )
       })
       }
      
-  
+</div>
     </>
     )
   
 }
+
+  

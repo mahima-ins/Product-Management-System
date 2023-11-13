@@ -1,11 +1,19 @@
-
-.card {
+.card-container{
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  }
+  
+  
+  
+  .card {
     width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   .card img {
@@ -22,3 +30,6 @@
     font-size: 1rem;
     color: #555;
   }
+  
+  
+  
