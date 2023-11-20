@@ -3,9 +3,12 @@ import { useEffect,useState } from 'react'
 import { Navbar } from '../../Components/Navbar/Navbar'
 import './Home.css'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 
-export const Home = () => {
+export const Home = (product) => {
+  // const Navigate=useNavigate()
   const [products, setProducts]=useState([])
   const fetchProducts = async ()=>{
     const response =   await axios.get("https://654a248ee182221f8d529899.mockapi.io/products")
@@ -14,7 +17,7 @@ export const Home = () => {
   useEffect(()=>{
     fetchProducts() 
 },[])
-console.log(products)
+console.log()
   return (
     <>
     <Navbar/>
@@ -26,15 +29,17 @@ console.log(products)
    <img src={obj1.ProductImage}alt="Product Image"/> 
   <h2 className="product-name">{obj1.ProductName}</h2>
   <p className="product-description">{obj1.ProductDescription}.</p>
-</div>
-       )
-      })
-      }
-     
-</div>
+  <Link to={`/singleProduct/${obj1.id}`}>See More</Link>
+  </div>
+            )
+        })
+    }
+    </div>
+    
     </>
-    )
-  
+
+  )
 }
+
 
   
