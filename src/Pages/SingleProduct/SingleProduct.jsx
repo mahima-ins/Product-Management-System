@@ -5,7 +5,7 @@ import { useNavigate, useParams, } from 'react-router-dom'
 import  axios  from 'axios'
 
 export const SingleProduct = () => {
-  const Navigate = useNavigate()
+  const navigate = useNavigate()
   
   const {id}=useParams()
   const[product, setProduct]=useState({})
@@ -13,7 +13,7 @@ export const SingleProduct = () => {
   const DeleteProduct=async()=>{
    const response= await axios.delete("https://654a248ee182221f8d529899.mockapi.io/products/" + id)
    if(response.status==200){
-    Navigate('/')
+    navigate('/')
    }
    else{
     alert("something went wrong!! try again")
@@ -38,6 +38,7 @@ return (
   <p className="product-description">{product.ProductDescription}</p>
  <mark> {product.ProductMaterial}</mark><br/>
  <button onClick={DeleteProduct}>Delete</button>
+ <button onClick={()=>navigate(`/editProduct/${product.id}`)}>Edit</button>
 
       </div>   
    
